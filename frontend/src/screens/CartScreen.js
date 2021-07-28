@@ -12,7 +12,7 @@ import {
 import { useSelector, useDispatch } from "react-redux";
 
 import Message from "../components/Message";
-import { addToCart } from "../actions/cartActions";
+import { addToCart, removeFromCart } from "../actions/cartActions";
 
 function CartScreen({ match, location, history }) {
   const productId = match.params.id;
@@ -31,7 +31,7 @@ function CartScreen({ match, location, history }) {
   }, [dispatch, productId, qty]);
 
   const removeFromCartHandler = (id) => {
-    console.log("remoove");
+    dispatch(removeFromCart(id));
   };
 
   const checkoutHandler = () => {
@@ -79,10 +79,10 @@ function CartScreen({ match, location, history }) {
                   <Col md={2}>
                     <Button
                       type="button"
-                      variant="white"
-                      onClicl={() => removeFromCartHandler(item.product)}
+                      variant="light"
+                      onClick={() => removeFromCartHandler(item.product)}
                     >
-                      <i className="fa fas-trash"></i>
+                      <i className="fas fa-trash"></i>
                     </Button>
                   </Col>
                 </Row>
