@@ -65,7 +65,7 @@ const LoginScreen = ({ location, history }) => {
           New Customer?{" "}
           <Link
             to={redirect ? `/register?redirect=${redirect}` : "/register"}
-          ></Link>
+          >Register</Link>
         </Col>
       </Row>
     </FormContainer>
