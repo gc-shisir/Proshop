@@ -31,11 +31,12 @@ const RegisterScreen = ({ location, history }) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    // DISPATCH REGISTER
     if (password !== confirmPassword) {
       setMessage("Passwords do not match");
+    } else {
+      // DISPATCH REGISTER
+      dispatch(register(name, email, password));
     }
-    dispatch(register(name, email, password));
   };
 
   return (
