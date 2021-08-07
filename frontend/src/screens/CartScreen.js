@@ -35,7 +35,7 @@ function CartScreen({ match, location, history }) {
   };
 
   const checkoutHandler = () => {
-    // redirect to login if qury string not equal to shippng
+    // redirect to login if query string not equal to shippng or redirect to login if not logged in
     history.push("/login?redirect=shipping");
   };
 
