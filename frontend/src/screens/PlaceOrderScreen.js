@@ -5,8 +5,11 @@ import { useDispatch, useSelector } from "react-redux";
 
 import Message from "../components/Message";
 import CheckoutSteps from "../components/CheckoutSteps";
+import { createOrder } from "../actions/orderActions";
 
 const PlaceOrderScreen = () => {
+  const dispatch = useDispatch();
+
   const cart = useSelector((state) => state.cart);
 
   // function to add two decimal places  in any number
@@ -29,7 +32,7 @@ const PlaceOrderScreen = () => {
     Number(cart.taxPrice).toFixed(2);
 
   const placeOrderHandler = () => {
-    console.log("object");
+    
   };
 
   return (
